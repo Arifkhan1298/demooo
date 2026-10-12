@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zainab Naseer — Curriculum Vitae</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 12mm 14mm 12mm 14mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: #1A202C;
+      background: #FFFFFF;
+      line-height: 1.5;
+      font-size: 10pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .cv-container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .cv-header {
+      border-bottom: 2px solid #D6B36A;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .header-left h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 24pt;
+      font-weight: 800;
+      color: #0B1220;
+      letter-spacing: 0.05em;
+      line-height: 1.1;
+    }
+
+    .header-left .title-tag {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #9B7226;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 4px;
+    }
+
+    .header-contact {
+      text-align: right;
+      font-size: 8.5pt;
+      color: #4A5568;
+      line-height: 1.6;
+    }
+
+    .header-contact a {
+      color: #0B1220;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .header-contact .highlight-wa {
+      color: #059669;
+      font-weight: 700;
+    }
+
+    /* Two-column Layout */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 18px;
+    }
+
+    /* Section Styling */
+    .section-title {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 11.5pt;
+      font-weight: 700;
+      color: #0B1220;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-bottom: 1.5px solid #E2E8F0;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #D6B36A;
+      border-radius: 50%;
+    }
+
+    .cv-section {
+      margin-bottom: 13px;
+    }
+
+    .summary-text {
+      font-size: 9pt;
+      color: #2D3748;
+      line-height: 1.55;
+      text-align: justify;
+    }
+
+    /* Timeline Items */
+    .item-block {
+      margin-bottom: 9px;
+    }
+
+    .item-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .item-role {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0B1220;
+    }
+
+    .item-date {
+      font-size: 8pt;
+      font-weight: 600;
+      color: #9B7226;
+      background: #FFFDF5;
+      border: 1px solid #F3E8C8;
+      padding: 1px 7px;
+      border-radius: 12px;
+    }
+
+    .item-company {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #4A5568;
+      margin-bottom: 3px;
+    }
+
+    .item-desc {
+      font-size: 8.5pt;
+      color: #4A5568;
+      line-height: 1.45;
+    }
+
+    .item-desc ul {
+      padding-left: 14px;
+      margin-top: 2px;
+    }
+
+    .item-desc li {
+      margin-bottom: 2px;
+    }
+
+    /* Sidebar Blocks */
+    .skill-category {
+      margin-bottom: 10px;
+    }
+
+    .skill-cat-title {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #765314;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .skill-tag {
+      font-size: 7.8pt;
+      font-weight: 600;
+      color: #1A202C;
+      background: #F7FAFC;
+      border: 1px solid #E2E8F0;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .skill-tag.accent {
+      background: #FDF9EE;
+      border-color: #EADCB8;
+      color: #765314;
+    }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 8.5pt;
+      margin-bottom: 4px;
+      padding-bottom: 2px;
+      border-bottom: 1px dashed #EDF2F7;
+    }
+
+    .lang-name {
+      font-weight: 600;
+      color: #1A202C;
+    }
+
+    .lang-level {
+      font-weight: 600;
+      color: #9B7226;
+      font-size: 8pt;
+    }
+
+    .sidebar-list {
+      list-style: none;
+      font-size: 8.5pt;
+      color: #2D3748;
+    }
+
+    .sidebar-list li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sidebar-list li::before {
+      content: '✔';
+      font-size: 7.5pt;
+      color: #D6B36A;
+      font-weight: bold;
+    }
+
+    /* Footer Note */
+    .cv-footer {
+      margin-top: 10px;
+      padding-top: 6px;
+      border-top: 1px solid #E2E8F0;
+      text-align: center;
+      font-size: 7.5pt;
+      color: #A0AEC0;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-container">
+    
+    <!-- Header -->
+    <header class="cv-header">
+      <div class="header-left">
+        <h1>Zainab Naseer</h1>
+        <div class="title-tag">BSIT Student | Web Developer &amp; Graphic Designer</div>
+      </div>
+      <div class="header-contact">
+        <div>📍 Lahore, Pakistan</div>
+        <div>📧 <a href="mailto:naturalstar848@gmail.com">naturalstar848@gmail.com</a></div>
+        <div>💬 <span class="highlight-wa">+92 300 44262924</span> (WhatsApp)</div>
+        <div>🔗 <a href="https://linkedin.com/in/zainab-naseer-12b29641b" target="_blank">linkedin.com/in/zainab-naseer</a></div>
+        <div>💻 <a href="https://github.com/Zainab-Naseer-7" target="_blank">github.com/Zainab-Naseer-7</a></div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="cv-body">
+      
+      <!-- Main Left Column -->
+      <div class="main-col">
+        
+        <!-- Summary -->
+        <section class="cv-section">
+          <h2 class="section-title">Professional Summary</h2>
+          <p class="summary-text">
+            Detail-driven Information Technology undergraduate student with robust foundations in frontend web technologies (HTML5, CSS3, JavaScript) and creative digital graphic design. Possesses 2 years of proven instructional and classroom communication experience as a computer teacher. Passionate about engineering high-performance responsive web interfaces, crafting elegant visual brand aesthetics, and leveraging modern technologies to deliver impactful digital experiences.
+          </p>
+        </section>
+
+        <!-- Education -->
+        <section class="cv-section">
+          <h2 class="section-title">Education</h2>
+          
+          <div class="item-block">
+            <div class="item-header">
+              <span class="item-role">BS Information Technology (BSIT)</span>
+              <span class="item-date">Enrolled / In Progress</span>
+            </div>
+            <div class="item-company">Government MAO College — Lahore, Pakistan</div>
+            <div class="item-desc">
+              Focus Areas: Web Development, Computer Systems, Software Concepts, Data Architecture, Database Management &amp; Information Systems.
+            </div>
+          </div>
+
+          <div class="item-block">
+            <div class="item-header">
+              <span class="item-role">Intermediate in Computer Science / Science</span>
+              <span class="item-date">2023 – 2025</span>
+            </div>
+            <div class="item-company">Ayesha Graduate College — Lahore, Pakistan</div>
+            <div class="item-desc">
+              Core Subjects: Computer Science, Mathematics, Physics, and IT applications with rigorous academic performance.
+            </div>
+          </div>
+
+          <div class="item-block">
+            <div class="item-header">
+              <span class="item-role">Matriculation (Computer Studies)</span>
+              <span class="item-date">2021 – 2023</span>
+            </div>
+            <div class="item-company">Government MCL Model High School — Lahore, Pakistan</div>
+            <div class="item-desc">
+              Fundamental science curriculum with distinction in computer literacy and introductory computing principles.
+            </div>
+          </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="cv-section">
+          <h2 class="section-title">Teaching Experience</h2>
+          
+          <div class="item-block">
+            <div class="item-header">
+              <span class="item-role">Computer Instructor &amp; Teacher (2 Years)</span>
+              <span class="item-date">2 Years Experience</span>
+            </div>
+            <div class="item-company">The Great Vision School System — Lahore, Pakistan</div>
+            <div class="item-desc">
+              <ul>
+                <li>Delivered foundational computer science and IT curriculum, fostering practical technology skills among students.</li>
+                <li>Designed engaging digital learning aids, classroom instructional slides, and hands-on laboratory exercises using MS Office.</li>
+                <li>Mentored students in typing, basic computer hardware operations, and introductory digital design fundamentals.</li>
+                <li>Demonstrated exceptional classroom leadership, organizational planning, patience, and clear bilingual communication.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Featured Projects / Portfolio -->
+        <section class="cv-section">
+          <h2 class="section-title">Practical Portfolio &amp; Projects</h2>
+          
+          <div class="item-block">
+            <div class="item-header">
+              <span class="item-role">Personal Portfolio &amp; Digital Universe</span>
+              <span class="item-date">Live on GitHub</span>
+            </div>
+            <div class="item-desc">
+              Bespoke luxury frontend portfolio featuring Glassmorphic Light &amp; Midnight Dark themes, GitHub REST API live integration, and responsive vanilla CSS/JS architecture.
+            </div>
+          </div>
+
+          <div class="item-block">
+            <div class="item-header">
+              <span class="item-role">Interactive Web Applications &amp; UI Prototypes</span>
+              <span class="item-date">GitHub Repos</span>
+            </div>
+            <div class="item-desc">
+              Collection of semantic HTML5, modern CSS, and JavaScript projects showcasing responsive layouts, DOM interactions, and modular design standards.
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="side-col">
+        
+        <!-- Technical Skills -->
+        <section class="cv-section">
+          <h2 class="section-title">Technical Skills</h2>
+          
+          <div class="skill-category">
+            <div class="skill-cat-title">Frontend Development</div>
+            <div class="skill-tags">
+              <span class="skill-tag accent">HTML5</span>
+              <span class="skill-tag accent">CSS3</span>
+              <span class="skill-tag accent">JavaScript</span>
+              <span class="skill-tag">Responsive UI</span>
+              <span class="skill-tag">Flexbox &amp; Grid</span>
+              <span class="skill-tag">DOM Manipulation</span>
+              <span class="skill-tag">REST API Integration</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-cat-title">Graphic Design</div>
+            <div class="skill-tags">
+              <span class="skill-tag accent">Visual Branding</span>
+              <span class="skill-tag">Typography</span>
+              <span class="skill-tag">Color Theory</span>
+              <span class="skill-tag">Digital Layouts</span>
+              <span class="skill-tag">Vector Emblems</span>
+              <span class="skill-tag">Design Aesthetics</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-cat-title">Tools &amp; Productivity</div>
+            <div class="skill-tags">
+              <span class="skill-tag accent">Git &amp; GitHub</span>
+              <span class="skill-tag">MS Word</span>
+              <span class="skill-tag">MS PowerPoint</span>
+              <span class="skill-tag">MS Excel</span>
+              <span class="skill-tag">VS Code</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Key Competencies -->
+        <section class="cv-section">
+          <h2 class="section-title">Core Strengths</h2>
+          <ul class="sidebar-list">
+            <li>Instructional Communication</li>
+            <li>Classroom Management</li>
+            <li>Student Engagement</li>
+            <li>Problem-Solving Mindset</li>
+            <li>Continuous Fast Learner</li>
+            <li>Team Collaboration</li>
+            <li>Patience &amp; Adaptability</li>
+            <li>Attention to Visual Detail</li>
+          </ul>
+        </section>
+
+        <!-- Languages -->
+        <section class="cv-section">
+          <h2 class="section-title">Languages</h2>
+          <div class="lang-item">
+            <span class="lang-name">Urdu</span>
+            <span class="lang-level">Native / Fluent</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">English</span>
+            <span class="lang-level">Professional Working</span>
+          </div>
+        </section>
+
+        <!-- Key Achievements -->
+        <section class="cv-section">
+          <h2 class="section-title">Key Highlights</h2>
+          <ul class="sidebar-list">
+            <li>Consistent Academic Record</li>
+            <li>2 Years Active Teaching</li>
+            <li>Live Open-Source Repos</li>
+            <li>Zero-Dependency Frontend</li>
+          </ul>
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="cv-footer">
+      Official Curriculum Vitae • Zainab Naseer • Verified Portfolio: github.com/Zainab-Naseer-7
+    </footer>
+
+  </div>
+</body>
+</html>
